@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My_Little_Exhibition</title>
+    <link rel="stylesheet" href="main_style.css" type="text/css">
+</head>
+<body>
+    <!-- 왼쪽 패널 -->
+    <div id="door_left">
+        <div class="left">
+            <div>
+                <h2>Exhibition<br><span style="font-size: 1.2vw;">Things That I Like</h2>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 가운데 패널 -->
+    <div class="center">
+        <div>
+            <h1>View Outside</h1>
+            <p>Welcome to the Elevator!</p>
+        </div>
+    </div>
+
+    <!-- 오른쪽 패널 -->
+    <div id="door_right">
+        <div class="right">
+            <div class="category-status" id="category-status">Current Category Movies</div>
+            <div>
+                <button class="page-btn" id="M" data-page="Movies"><span style="font-weight: bold;">Movies</button>
+                <button class="page-btn" id="t" data-page="Travel"><span style="font-weight: bold;">Travel</button>
+                <button class="page-btn" id="m" data-page="Music"><span style="font-weight: bold;">Music</button>
+                <button class="page-btn" id="n" data-page="Notice"><span style="font-weight: bold;">Notice</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="elevatorSound" src="sound_effect/elevator-bell-doors-92709.mp3"></audio>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            // 초기 설정: Floor 1 버튼 선택 상태로 설정
+            $(".page-btn[data-page='Notice']").addClass("selected"); // Floor 1 버튼 강조
+            $(".center").load("notice.html"); // 기본 내용 로드
+            $("#category-status").text("Current Category Notice"); // 상태 업데이트
+
+            // 버튼 클릭 시 페이지 전환
+            $(".page-btn").click(function() {
+
+                const pageNum = $(this).data("page"); // 클릭한 버튼에 해당하는 페이지 번호
+                const $currentButton = $(this);
+
+                // 버튼 색 변경: 현재 선택된 버튼 색을 기본 색으로, 새로 선택된 버튼에 특별한 색
+                $(".page-btn").removeClass("selected"); // 기존 선택된 버튼 색 초기화
+                $currentButton.addClass("selected");
+
+                elevatorSound.currentTime = 0; // 재생 위치 초기화
+                elevatorSound.play(); // 효과음 재생
+
+                $("#door_left, #door_right").animate({width: "+=30%"}, 1000, function(){
+
+                    if(pageNum == 'Movies'){
+                        $(".center").load("movies.html");
+                    } else if(pageNum == 'Travel'){
+                        $(".center").load("travel.html");
+                    } else if(pageNum == 'Music') {
+                        $(".center").load("music.html");
+                    } else if(pageNum == 'Notice') {
+                        $(".center").load("notice.html");
+                    }
+
+                    // 카테고리 상태 업데이트
+                    $("#category-status").text(`Current Category ${pageNum}`);
+
+                    setTimeout(function(){
+                        $("#door_left, #door_right").animate({width: '-=15%'}, 1000);
+                    },1500);
+
+                });
+            });
+        });
+    </script>
+</body>
+</html>

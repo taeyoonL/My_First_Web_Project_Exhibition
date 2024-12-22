@@ -1,0 +1,74 @@
+body {
+    text-align: center;
+    background-color: ivory;
+    justify-content: center;
+}
+
+.music_category_title{
+    justify-content: center;
+    color: black;
+    width: 60vw;
+}
+
+.music_explainer{
+    background-color: white;
+    padding: 3.5%;
+    border: 0.4rem solid black;
+    margin-top: 5vh;
+    margin-bottom: 20vh;
+    width: 60vw;
+    justify-content: center;
+    color: black;
+}
+
+.movie_genre_name{
+    width: 60vw;
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+
+.music_container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.music_rectangle {
+    width: 60vw;
+    height: fit-content;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 7%;
+}
+
+.music_rectangle img{
+    width: 35%;
+    height: 50%;
+}
+
+.music_genre_explain_t {
+    position: relative;
+    background-color: white;
+    color: black;
+    left: 25px;
+
+    /*padding: 5px;*/
+    display: none; /* 기본적으로 숨김 */
+    border: 0.5rem solid white;
+    padding:5px;
+
+    width: auto;
+    height: auto;
+
+    overflow: visible;
+}

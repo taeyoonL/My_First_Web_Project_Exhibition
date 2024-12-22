@@ -1,0 +1,78 @@
+body {
+    text-align: center;
+    background-color: ivory;
+    justify-content: center;
+}
+
+.movie_category_title{
+    justify-content: center;
+    color: red;
+    width: 60vw;
+}
+
+.movie_genre_explainer{
+    background-color: rgb(254, 200, 200);
+    padding: 3.5%;
+    border: 0.4rem solid grey;
+    margin-top: 5vh;
+    margin-bottom: 20vh;
+    width: 60vw;
+    justify-content: center;
+    color: black;
+}
+
+.movie_genre_name{
+    background-color: violet;
+    border-top: 0.1rem solid white;
+    border-bottom: 0.1rem solid white;
+    color: black;
+}
+
+.movie_container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+
+    width: 60%;
+}
+
+.movie_rectangle {
+    width: 60vw;
+    height: fit-content;
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 7%;
+}
+
+.movie_rectangle img{
+    width: 35%;
+    height: 50%;
+}
+
+.movie_rec_t {
+    position: relative;
+    background-color: rgb(255, 208, 208);
+    color: black;
+    left: 25px;
+
+    /*padding: 5px;*/
+    display: none; /* 기본적으로 숨김 */
+    border: 0.5rem solid rgb(253, 205, 205);
+    padding:5px;
+
+    width: auto;
+    height: auto;
+
+    overflow: visible;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+    .container{
+        flex-direction: column;
+    }
+}

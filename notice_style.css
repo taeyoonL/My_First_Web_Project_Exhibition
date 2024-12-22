@@ -1,0 +1,28 @@
+body{
+    background-color: ivory;
+    text-align: center;
+    justify-content: center;
+}
+
+.notice_box{
+    background-color: rgb(5, 84, 82);
+    border: 0.5rem solid goldenrod;
+    color: gold;
+    padding: 5px;
+    font: italic small-caps bold 16px cursive;
+    width: 100%;
+
+    justify-content: center;
+    text-align: center;
+}
+
+.notice_box_title{
+    background-color: rgb(126, 119, 88);
+    color: gold;
+    font: italic small-caps bold 20px cursive;
+
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+
+    border: 0.15rem solid goldenrod;
+}

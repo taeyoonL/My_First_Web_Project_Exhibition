@@ -1,0 +1,81 @@
+body {
+    text-align: center;
+    background-color: ivory;
+    justify-content: center;
+}
+
+.travel_category_title {
+    width: 60vw;
+    color: blue;
+    justify-content: center;
+}
+
+.travel_explainer {
+    background-color: lightskyblue;
+    color: black;
+    font: italic small-caps bold 16px cursive;
+    
+    margin-top: 5vh;
+    margin-bottom: 20vh;
+
+    width: 100%;
+
+    border: 0.3rem solid blue;
+    padding: 5px;
+}
+
+.travel_country_name {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+
+    width: 60vw;
+}
+
+.travel_container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 60%;
+    height: fit-content;
+
+    flex-direction: column;
+}
+
+.travel_rectangle {
+    width: 100%;
+
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 7%;
+}
+
+.travel_rectangle img{
+    width: 40%;
+    height: 50%;
+}
+
+.travel_country_explain_t {
+    position: relative;
+    left: 15px;
+
+    background-color: rgba(145, 191, 247, 0.8);
+    color: black;
+
+    display: none; /* 기본적으로 숨김 */
+    border: 0.3rem solid rgba(157, 198, 249, 0.8);
+    padding: 3px;
+
+    font: italic small-caps bold 16px cursive;
+
+    width: auto;
+    height: auto;
+
+    overflow: visible;
+}

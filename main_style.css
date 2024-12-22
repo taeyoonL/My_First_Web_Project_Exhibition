@@ -1,0 +1,396 @@
+* {
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    display: flex; /* body가 flex 컨테이너 역할 */
+    height: 100vh; /* 화면 전체 높이 */
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: ivory;
+    text-align: center;
+    justify-content: center;
+}
+
+/* 왼쪽, 가운데, 오른쪽 패널 */
+.left, .right {
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    align-items: flex-start;
+    border: 1rem solid #b8860B;
+    padding: 0.6rem;
+    background-color: #663300;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    font-size: 1.5vw;
+}
+
+.center {
+    width: 100%;
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: ivory;
+    flex-direction:column;
+    justify-content: flex-start;
+    color: #f0f0f0;
+    text-align: center;
+}
+
+.right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 1.5vw;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* 내부 텍스트 정렬 */
+.left div, .center div, .right div {
+    text-align: center;
+}
+
+#door_right{
+    background-color: #663300;
+    border: 1rem solid #b8860B;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 20%;
+    height: 100%;
+}
+
+#door_left{
+    background-color: #663300;
+    border: 1rem solid #b8860B;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 20%;
+    height: 100%;
+}
+
+/* 카테고리 상태 표시 영역 */
+.category-status {
+    background-color: #FFD700;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    color: #000;
+    font-weight: bold;
+}
+
+/* 버튼 스타일 */
+button {
+    padding: 15px 25px;
+    margin: 5px;
+    background-color: #ADD8E6; /* 연한 파랑색 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.selected {
+    background-color: #FF6347; /* 연한 빨강색 */
+}
+
+button:hover {
+    background-color: #FF6347;
+}
+
+/* movies.html 파일에 대한 CSS */
+
+.movie_category_title{
+    justify-content: center;
+    color: red;
+    width: 60vw;
+}
+
+.movie_genre_explainer{
+    background-color: black;
+    padding: 3.5%;
+    border: 0.4rem solid grey;
+    margin-top: 5vh;
+    margin-bottom: 20vh;
+    width: 60vw;
+    justify-content: center;
+
+    font: italic small-caps bold 16px cursive;
+    font-weight: 40px;
+}
+
+.movie_genre_name{
+    background-color: #6c5a72;
+    border-top: 0.1rem solid white;
+    border-bottom: 0.1rem solid white;
+    color: white;
+
+    font: italic small-caps bold 20px cursive;
+}
+
+.movie_container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+
+    width: 100%;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: fit-content;
+
+}
+
+.movie_rectangle {
+    width: 40vw;
+    height: 50vh;
+    overflow: hidden; /* 이미지가 사각형 밖으로 넘치지 않도록 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 7%;
+}
+
+.movie_rectangle img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.movie_rec_t {
+    position: absolute;
+    bottom: 5px; /* 이미지 밑에 텍스트 위치 */
+    background-color: rgba(219, 30, 30, 0.8);
+    color: white;
+    /*padding: 5px;*/
+    display: none; /* 기본적으로 숨김 */
+    border: 0.5rem solid rgba(219, 30, 30, 0.8);
+    padding: 5px;
+
+    font:italic small-caps bold 16px cursive;
+    font-weight: 10px;
+
+    width: auto;
+    height: auto;
+
+    overflow: visible;
+}
+
+.notice_box{
+    background-color: black;
+    border: 0.5rem solid goldenrod;
+    color: gold;
+    padding: 5px;
+    font: italic small-caps bold 16px cursive;
+    width: 100%;
+
+    justify-content: center;
+    text-align: center;
+}
+
+.notice_box_title{
+    background-color: navy;
+    color: gold;
+    font: italic small-caps bold 20px cursive;
+
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+
+    border: 0.15rem solid goldenrod;
+}
+
+
+.travel_category_title {
+    width: 60vw;
+    color: lightskyblue;
+    justify-content: center;
+}
+
+.travel_explainer {
+    background-color: lightskyblue;
+    color: black;
+    font: italic small-caps bold 16px cursive;
+    
+    margin-top: 5vh;
+    margin-bottom: 20vh;
+
+    border: 0.3rem solid blue;
+    padding: 5px;
+}
+
+.travel_country_name {
+    background-color: blue;
+    color: black;
+    padding: 10px;
+
+    width: 60vw;
+}
+
+.travel_container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    overflow: visible;
+
+    width: 100%;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: fit-content;
+    flex-direction: column;
+}
+
+.travel_rectangle {
+    width: fit-content;
+
+    overflow: visible; /* 이미지가 사각형 밖으로 넘치지 않도록 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: visible;
+    margin-bottom: 7%;
+}
+
+.travel_rectangle img{
+    width: 35%;
+    height: 55%;
+}
+
+.travel_country_explain_t {
+    position: relative;
+    left: 15px;
+
+    background-color: rgba(85, 139, 207, 0.8);
+    color: black;
+
+    display: none; /* 기본적으로 숨김 */
+    border: 0.3rem solid rgba(85, 139, 207, 0.8);
+    padding:3px;
+
+    font: italic small-caps bold 16px cursive;
+
+    font-weight: 10px;
+
+    width: fit-content;
+    height: fit-content;
+
+    overflow: visible;
+}
+
+body {
+    text-align: center;
+    background-color: ivory;
+    justify-content: center;
+}
+
+.music_category_title {
+    width: 60vw;
+    color: black;
+    justify-content: center;
+}
+
+.music_explainer {
+    background-color: white;
+    color: black;
+    font: italic small-caps bold 16px cursive;
+    
+    margin-top: 5vh;
+    margin-bottom: 20vh;
+
+    width: 60vw;
+
+    border: 0.3rem solid black;
+    padding: 5px;
+}
+
+.music_genre_name {
+    background-color: black;
+    color: white;
+    padding: 10px;
+
+    width: 60vw;
+}
+
+.music_container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; /* 가로 배치로 변경 */
+    justify-content: center;
+    overflow: visible;
+
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: fit-content;
+}
+
+.music_rectangle {
+    width: 60vw;
+    height: fit-content;
+
+    overflow: visible;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 7%;
+}
+
+.music_rectangle img {
+    width: 35%; /* 너비 조정 */
+    height: 50%;
+}
+
+.music_genre_explain_t {
+    position: relative;
+    left: 5px; /* 위치를 더 오른쪽으로 조정 */
+
+    background-color: white;
+    color: black;
+
+    display: none; /* 기본적으로 숨김 */
+    border: 0.3rem solid white;
+    padding: 3px;
+
+    font: italic small-caps bold 16px cursive;
+
+    width: fit-content;
+    height: fit-content;
+
+    overflow: visible;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+    .container{
+        flex-direction: column;
+    }
+}
+
